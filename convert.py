@@ -56,7 +56,7 @@ def convert_mp4_to_jpgs(path, quality):
         os.makedirs(os.path.basename(os.path.splitext(path)[0]))
     while still_reading:
         #https://stackoverflow.com/questions/58375458/saving-an-image-in-opencv-increase-image-size
-        cv2.imwrite(os.path.basename(os.path.splitext(path)[0])+f"/frame_{frame_count:010d}.jpg", image, [int(cv2.IMWRITE_JPEG_QUALITY), quality])
+        cv2.imwrite(os.path.basename(os.path.splitext(path)[0])+f"/frame_{frame_count:010d}.jpg", image, [int(cv2.IMWRITE_JPEG_QUALITY), int(quality)])
         
         # read next image
         still_reading, image = video_capture.read()
